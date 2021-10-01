@@ -1,0 +1,14 @@
+<div class="container-fluid mt-3">
+  <div class="row row-cols-3">
+    <div class="blocks" *ngFor="let b of userBlogs">
+      <div class="card">
+        <img [src]="b.imagePath" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <p class="date-author">{{b.date |date}} <span class="author"> {{ b.author}}</span></p>
+          <a class="title" [routerLink]="[ '/blog', b.id ]">{{b.title}}</a>
+          <p class="text">{{b.text|slice:0:50}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

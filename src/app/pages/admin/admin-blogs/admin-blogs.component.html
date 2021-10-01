@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <form [formGroup]="blogForm">
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="title here.." formControlName="title">
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" rows="3" placeholder="text here.." formControlName="text"></textarea>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" placeholder="author here.." formControlName="author">
+    </div>
+    <button type="button" class="btn btn-dark" (click)="saveBlog()" [disabled]="blogForm.invalid"
+      *ngIf="!editStatus">Add</button>
+    <button type="button" class="btn btn-light" *ngIf="editStatus" (click)="saveBlog()">Save edit</button>
+  </form>
+  <hr>
+  <hr>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Text</th>
+          <th scope="col">Date</th>
+          <th scope="col">Author</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let  b of adminBlogs; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{b.title}}</td>
+          <td>{{b.text |slice:0:50}}...</td>
+          <td>{{b.date | date}}</td>
+          <td>{{b.author}}</td>
+          <td><button type="button" class="btn btn-dark" (click)="editBlog(b)">Edit</button></td>
+          <td><button type="button" class="btn btn-dark" (click)="deleteBlog(b)" [disabled]="editStatus">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

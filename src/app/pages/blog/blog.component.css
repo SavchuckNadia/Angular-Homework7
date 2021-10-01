@@ -1,0 +1,52 @@
+.date-author {
+  color: rgb(73, 151, 224);
+  font-size: 17px;
+}
+
+.card {
+  border: none;
+  margin: 0 5px 0 5px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.text {
+  font-size: 18px;
+}
+
+.title:hover {
+  text-decoration: 2px solid black underline;
+}
+
+.author:hover {
+  text-decoration: 1px solid rgb(73, 151, 224) underline;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+@media(max-width:681px){
+  .row{
+    flex-direction: column;
+    align-content: center;
+  }
+  
+.row-cols-3>* {
+    width: 80%;
+  }
+}
+@media(max-width:481px){
+  .row-cols-3>* {
+    width: 100%;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  
+}

@@ -1,0 +1,12 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Title 1",
+      "text": "some text 1",
+      "date": "2019,10,9",
+      "author": "Ivanov Ivan",
+      "imagePath": "https://www.askcga.com/wp-content/uploads/2020/09/Untitled-design-7.png"
+    }
+  ]
+}
